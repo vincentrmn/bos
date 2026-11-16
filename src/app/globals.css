@@ -1,0 +1,36 @@
+/* ============================================================================
+   Tokens de l'interface de Bos. Regle absolue : aucune couleur en dur dans
+   les composants, tout passe par les variables ci-dessous. La charte de Bos
+   les remplacera quand elle sera tranchee (docs/decisions.md).
+   ========================================================================== */
+:root {
+  --fond: #ffffff;
+  --texte: #1a1a1a;
+  --texte-doux: #5c5c5c;
+  --police: "Helvetica Neue", Arial, sans-serif;
+  --espace: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police);
+}
+
+.accueil {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: calc(var(--espace) * 3) var(--espace);
+}
+
+.accueil p {
+  color: var(--texte-doux);
+}
