@@ -7,9 +7,18 @@ quand on touche ces fichiers), les références dans `.claude/skills/`.
 
 ## 1. Le projet en dix lignes
 
-**Bos** : <à compléter par Vincent et Mickael : ce que fait le produit, pour
-qui, le premier usage visé>. Contexte complet : `docs/contexte/` (à écrire au
-premier `/cadrer`).
+**Bos** rend disponibles des services aux acteurs qui gravitent autour d'un
+bâtiment (occupants, locataires, propriétaires, bailleurs, maintenance,
+électriciens) grâce à des capteurs et actionneurs posés dans le bâtiment :
+ombrage automatique, monitoring énergétique, ouverture des fenêtres, sécurité
+intrusion. Le parcours : un **configurateur** en ligne (données du bâtiment,
+choix des services), un **package d'équipements** calculé par la plateforme,
+la **commande** en ligne, la commande automatique aux fournisseurs (prix
+négociés), un **plan d'exécution** validé par le gestionnaire, la réception et
+le **commissionnement**, la pose en **plug and play** (client ou électricien
+partenaire), puis les services dans l'**interface client** et l'**app mobile**.
+Un nouveau service sans équipement de plus est actif dès la commande. Exigence
+première : hyper simple pour l'utilisateur final. Détail : `docs/contexte/produit.md`.
 
 Structure et méthode reprises le 16/11/2026 de `vincentrmn/platform` (workflow
 `korr-workflow`) ; aucun code ni aucune leçon produit n'en vient : les deux
@@ -106,7 +115,7 @@ Procédures, variables et leçons : skill `railway-ops`.
 | skill `staging` | `/staging <PR>` : déployer une PR sur l'environnement staging |
 | `.claude/agents/`, `.claude/hooks/`, skills `cadrer`, `construire`, `livrer`, `journal`, `installer`, `staging` | partie commune du workflow, recopiée depuis `korr-workflow` (version dans `.claude/workflow-version`) ; ne pas éditer ici |
 | `docs/plans/` | les plans validés, un par sujet, colonne « État » tenue par `/construire` (gabarit `.gabarit.md`) |
-| `docs/contexte/` | le produit, l'architecture (à compléter) |
+| `docs/contexte/` | le produit (`produit.md`), l'architecture |
 | `docs/decisions.md` | les arbitrages tranchés, datés |
 | `docs/feuille-de-route.md` | à faire, prochaine étape, ce qui attend Vincent et Mickael |
 | `docs/journal/` | une entrée par session, jamais chargée (gabarit `.gabarit.md`) |
@@ -114,6 +123,7 @@ Procédures, variables et leçons : skill `railway-ops`.
 ## 8. Où on en est (16/11/2026)
 
 Socle posé (PR de mise en place) : workflow complet, squelette Next.js qui
-répond sur `/` et `/api/health`, CI `check`. Rien n'est en ligne. Prochaine
-étape (`docs/feuille-de-route.md`) : décrire Bos ici, brancher le projet
-Railway `bos` et le staging, puis `/cadrer` le premier sujet produit.
+répond sur `/` et `/api/health`, CI `check`. Produit décrit
+(`docs/contexte/produit.md`). Rien n'est en ligne. Prochaine étape
+(`docs/feuille-de-route.md`) : brancher le projet Railway `bos` et le
+staging, puis `/cadrer` la première brique du parcours.

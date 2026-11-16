@@ -5,9 +5,9 @@ en fin de `/cadrer`, `/construire` et `/livrer`.
 
 **À FAIRE (prochaines sessions)**, dans l'ordre :
 
-1. **Décrire Bos** (Vincent et Mickael) : remplir la section 1 du `CLAUDE.md`
-   (ce que fait le produit, pour qui, le premier usage) et un
-   `docs/contexte/produit.md`.
+1. ~~Décrire Bos~~ **fait le 16/11** : section 1 du `CLAUDE.md` et
+   `docs/contexte/produit.md`. Reste à choisir le premier usage à construire
+   (quelle brique du parcours d'abord) : c'est le sujet du premier `/cadrer`.
 2. **Brancher Railway** (projet `bos`, vierge) : service relié à `main` de
    `vincentrmn/bos`, Postgres, variables (`DATABASE_URL` en référence,
    `PGSSL=require`, `AUTH_SECRET`, `PORT`, `PUBLIC_APP_URL`), domaine, région.
