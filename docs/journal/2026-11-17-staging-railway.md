@@ -23,5 +23,12 @@
 Reportées dans le skill `railway-ops` (création d'environnement à la main,
 suffixe imposé au nom du service, preuve par le contrôle de santé).
 
+## Suite : production (même soir)
+- Postgres `Postgres-Q4iS` ajouté, service `bos` et base passés en `ams`,
+  variables posées (`AUTH_SECRET` généré par l'agent Railway), adresse
+  Railway générée, contrôle de santé `/api/health`.
+- Vérifié : déploiement de production en `SUCCESS` avec le contrôle de santé.
+
 ## Prochaine étape
-Finir la production (Postgres, variables, domaine, région), protéger `main`.
+Protéger `main`, éventuellement un domaine personnalisé, puis `/cadrer` la
+première brique du parcours.
