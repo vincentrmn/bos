@@ -70,8 +70,8 @@ projets n'ont rien en commun hors la manière de travailler.
 
 ## 5. Infra
 
-Railway : projet `bos`, vierge au 16/11 (services, Postgres, variables,
-domaine et staging à poser). Après chaque push sur `main` : **poller le
+Railway : projet `bos`. `staging` en ligne depuis le 17/11 (EU West, Postgres,
+branche `staging`) ; `production` : service sur `main` sans base ni domaine. Après chaque push sur `main` : **poller le
 déploiement jusqu'à `SUCCESS`**, puis health 200 et routes gardées.
 Procédures, variables et leçons : skill `railway-ops`.
 
@@ -124,6 +124,6 @@ Procédures, variables et leçons : skill `railway-ops`.
 
 Socle posé (PR de mise en place) : workflow complet, squelette Next.js qui
 répond sur `/` et `/api/health`, CI `check`. Produit décrit
-(`docs/contexte/produit.md`). Rien n'est en ligne. Prochaine étape
-(`docs/feuille-de-route.md`) : brancher le projet Railway `bos` et le
-staging, puis `/cadrer` la première brique du parcours.
+(`docs/contexte/produit.md`). Staging en ligne (17/11). Prochaine étape
+(`docs/feuille-de-route.md`) : finir la production Railway, puis `/cadrer`
+la première brique du parcours.

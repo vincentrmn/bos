@@ -5,10 +5,32 @@ description: Déployer et exploiter Bos sur Railway (projet bos : services, vari
 
 # Railway et la mise en ligne de Bos
 
-## Ce qui existe (16/11/2026)
-- Projet Railway `bos`, créé et vierge : aucun service, aucune base, aucun
-  domaine. Cette section se remplit avec l'état réel, vérifié, à la mise en
-  ligne (point 2 de `docs/feuille-de-route.md`).
+## Ce qui existe (vérifié le 17/11/2026)
+- Projet Railway `bos` (`060ce165-e7ce-4310-b50f-53fc2f33d668`), dans l'espace
+  de Vincent. Mickael y est membre « can edit » au niveau du projet : il ne
+  voit pas l'espace, donc le connecteur Railway ne liste pas le projet ;
+  toujours passer l'identifiant du projet.
+- **production** (`e3c00182-a166-4c8b-a8fd-eec4169fc106`) : service `bos`
+  (`d234373f-815c-403e-9cb0-50d838ec54dd`) sur `main`, auto-deploy, région
+  us-west2. **Pas encore de Postgres, de variables applicatives ni de
+  domaine** : `/api/health` y répond 500. À poser (`docs/feuille-de-route.md`).
+- **staging** (`928a302a-6931-4be0-83b1-6e43204c5ead`), région `ams`
+  (EU West) : service `bos-qqJ4` (`018b5fe3-ddef-408e-943e-c086072781c4`) sur
+  la branche `staging`, auto-deploy, contrôle de santé `/api/health` (délai
+  120 s), adresse https://bos-qqj4-staging.up.railway.app ; service
+  `Postgres` (`a50eb609-8640-4eac-8bdc-aece8ff5a695`) et son volume.
+  Variables : `DATABASE_URL` (référence au Postgres du staging), `PGSSL`,
+  `PORT=8080`, `AUTH_SECRET`, `PUBLIC_APP_URL`.
+
+## Leçons de la mise en place (17/11)
+- Le connecteur Railway ne sait pas créer un environnement : c'est fait à la
+  main dans le tableau de bord (« New Environment », vide de préférence).
+- L'agent Railway crée un service nouveau dans un environnement vide (il ne
+  sait pas y rattacher un service existant) et lui impose un suffixe quand le
+  nom est pris : d'où `bos-qqJ4`. Le renommer se fait dans le tableau de bord.
+- Le bac à sable ne joint pas les adresses `*.up.railway.app` : la preuve d'un
+  `/api/health` à 200 est le contrôle de santé Railway (déploiement en
+  `SUCCESS` seulement si la route répond 200).
 
 ## Ce qu'il faut poser (première mise en ligne)
 - Service `bos` relié à la branche `main` de `vincentrmn/bos`, auto-deploy,
